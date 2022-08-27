@@ -32,7 +32,7 @@ def on_open(ws):
         "data": {
             "method": "subscribe",
             "arg": {
-                "event": "watching", # watching, nearby, groups, etc...
+                "event": "nearby", # watching, nearby, groups, etc...
                 "subId": sub_id
             }
         }
@@ -42,7 +42,7 @@ def on_open(ws):
 if __name__ == "__main__":
     #websocket.enableTrace(True)
     if len(sys.argv) < 2:
-        host = "ws://localhost:1080/api/ws"
+        host = "ws://localhost:1080/api/ws/events"
     else:
         host = sys.argv[1]
     print("Connecting to:", host)
